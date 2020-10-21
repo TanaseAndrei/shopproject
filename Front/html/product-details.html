@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" href="/css/products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/262b4f6075.js"></script>
+    <title>E-commerce website</title>
+</head>
+
+<body>
+
+    <!-- Container for navbar -->
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+            </div>
+            <!-- Nav links -->
+            <nav>
+                <ul id="MenuItems">
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Categories</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="nav-icon" src="/Resources/shopping-cart-of-checkered-design.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img class="nav-icon" src="/Resources/heart.png">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <img class="menu-icon" src="/Resources/menu.png" onclick="menuToggle()">
+        </div>
+
+        <!-- Featured products -->
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>All products</h2>
+                <select name="" id="">
+                    <option>Default</option>
+                    <option>Price: low to high </option>
+                    <option>Price: high to low</option>
+                    <option>Most buyed</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="/Resources/Casti/JBL Tune 700BT.png">
+                    <div class="feature-products-product-name">
+                        <h4>JBL Tune 700BT</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>299$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                    <div class="feature-products-product-name">
+                        <h4>Asus ZenBook 14 UM425IA</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>799$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Telefoane/Huawei P40 Lite, Dual Sim.png">
+                    <div class="feature-products-product-name">
+                        <h4>Huaweei P40 Lite</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>999$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Smartwatchuri/Fitbit Versa2.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Smartwatchuri/Apple Watch 3.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Smartwatchuri/Samsung Galaxy Watch Active 2.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Casti/SONY WHCH510B.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Casti/Sony WH-XB700L.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Laptopuri/Laptop ultraportabil Huawei MateBook X Pro 2020.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Laptopuri/Laptop Gaming Acer Nitro 5 ANS15-55-S317.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Telefoane/Samsung Galaxy Note 20 Ultra.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="/Resources/Telefoane/Apple iPhone 11 64GB.png">
+                    <div class="feature-products-product-name">
+                        <h4>Fitbit Versa 2</h4>
+                    </div>
+                    <div class="feature-products-product-price">
+                        <p>199$</p>
+                    </div>
+                    <div class="feature-products-stock-info">
+                        <span>IN STOCK</span>
+                    </div>
+                    <div class="feature-products-product-icons">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-button">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>&#8594;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer part -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Stay tuned!</h3>
+                    <p>Keep in touch for more exclusive online products!</p>
+                    <form>
+                        <input type="text" placeholder="Email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-col-2">
+                    <h3>This may help you</h3>
+                    <ul>
+                        <li>Hosting</li>
+                        <li>Terms and conditions</li>
+                        <li>Return policy</li>
+                        <li>Got a problem? Contact us</li>
+                    </ul>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <a href="">
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-pinterest" aria-hidden="true"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright &copy; 2020 www.Electrix.com</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menuToggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "100%";
+                MenuItems.style.marginTop = "50px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+                MenuItems.style.marginTop = "0px;";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

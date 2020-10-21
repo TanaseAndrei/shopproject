@@ -1,0 +1,35 @@
+@import "index.css";
+
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto;
+}
+
+select{
+    border: 1px solid coral;
+    padding: 5px;
+    border-radius: 30px;
+    
+}
+
+select:focus{
+    outline: none;
+}
+
+.page-button{
+    margin: 0 auto 80px;
+}
+
+.page-button span{
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.page-button span:hover{
+    background: #FFE3CF;
+}
