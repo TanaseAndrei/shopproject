@@ -1,0 +1,72 @@
+@import "index.css";
+@import "products.css";
+
+.col-2 h1, h2, h3, form{
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.col-2 form{
+    margin: 20px 0px;
+}
+
+.col-2 form label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.col-2 form input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.col-2 form input:focus{
+    border-bottom: 1px solid #FF994D;
+    transition: all 0.5s ease-in-out;
+}
+
+.col-2 h4{
+    font-size: 30px;
+}
+
+.col-2 p{
+    font-size: 20px;
+}
+
+.product-info-buttons-container{
+    margin: 20px 15px;
+}
+
+.product-info-button{
+    padding: 5px 30px;
+    margin: 0px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 20px;
+    background: #FF994D;
+}
+
+.single-product{
+    margin-top: 50px;
+}
+
+.single-product .col-2 img{
+    padding: 0;
+}
+
+.single-product .col-2{
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+    .row{
+        text-align: center;
+    }
+
+    .col-2{
+        flex-basis: 100%;
+    }
+}
