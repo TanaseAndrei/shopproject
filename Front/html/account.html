@@ -19,7 +19,9 @@
         <div class="navbar">
             <!-- Logo -->
             <div class="logo">
-                <img src="/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                <a href="index.html">
+                    <img src="/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                </a> 
             </div>
             <!-- Nav links -->
             <nav>
@@ -54,11 +56,21 @@
                     <div class="col-2">
                         <div class="form-container">
                             <div class="form-button">
-                                <span>Login</span>
-                                <span>Sign up</span>
+                                <span onclick="login()">Login</span>
+                                <span onclick="register()">Sign up</span>
+                                <hr id="indicator">
                             </div>
-                            <form>
-                                <input type="text">
+                            <form id="loginForm">
+                                <input type="text" placeholder="Username">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="button">Login</button>
+                                <a href="">Forgot password?</a>
+                            </form>
+                            <form id="registerForm">
+                                <input type="text" placeholder="Username">
+                                <input type="email" placeholder="Email">
+                                <input type="password" placeholder="Password">
+                                <button type="submit" class="button">Sign up</button>
                             </form>
                         </div>
                     </div>
@@ -124,7 +136,23 @@
                     MenuItems.style.marginTop = "0px;";
                 }
             }
+        </script>
+        <script>
+            var loginForm = document.getElementById("loginForm");
+            var registerForm = document.getElementById("registerForm");
+            var indicator = document.getElementById("indicator");
 
+            function register() {
+                registerForm.style.transform = "translateX(0px)";
+                loginForm.style.transform = "translateX(0px)";
+                indicator.style.transform = "translateX(100px)";
+            }
+
+            function login() {
+                registerForm.style.transform = "translateX(300px)";
+                loginForm.style.transform = "translateX(300px)";
+                indicator.style.transform = "translateX(0px)";
+            }
         </script>
 </body>
 

@@ -89,12 +89,13 @@ a{
 }
 
 
-.col-3 .button-container{
+.button-container{
     display: flex;
     justify-content: space-around;
 }
 
 .main-content-button{
+    color: white;
     display: inline-block;
     background: #FF994D;
     padding: 15px 20px;
@@ -126,6 +127,37 @@ a{
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.content{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 25px;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    border-radius: 30px;
+    background: rgba(255, 156, 90, 0.5);
+}
+
+.wrapper:hover .overlay{
+    opacity: 1;
 }
 
 /*FEATURED PRODUCTS*/
@@ -224,6 +256,7 @@ a{
     padding: 15px 20px;
     margin: 20px 0px;
     border-radius: 30px;
+    color: white;
 }
 
 /*FOOTER PART*/ 
@@ -263,6 +296,11 @@ a{
 
 .footer-col-1{
     flex-basis: 30%;
+}
+
+.footer-col-1 form button{
+    margin-top: 10px;
+    color: white;
 }
 
 .footer-col-2{
@@ -309,14 +347,14 @@ ul{
         opacity: 0.8;
         width: 100%;
         overflow: hidden;
-        transition: max-height 0.6s;
+        transition: 0.5s ease-in-out;
     }
 
     nav ul li{
         display: block;
         margin-bottom: 10px;
         margin-right: 50px;
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     nav ul li a{

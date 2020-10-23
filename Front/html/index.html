@@ -19,24 +19,26 @@
         <div class="navbar">
             <!-- Logo -->
             <div class="logo">
-                <img src="/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                <a href="index.html">
+                    <img src="/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                </a>
             </div>
             <!-- Nav links -->
             <nav>
                 <ul id="MenuItems">
                     <li>
-                        <a href="">Login</a>
+                        <a href="account.html">Login</a>
                     </li>
                     <li>
                         <a href="">Categories</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="cart.html">
                             <img class="nav-icon" src="/Resources/shopping-cart-of-checkered-design.png">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="favorites.html">
                             <img class="nav-icon" src="/Resources/heart.png">
                         </a>
                     </li>
@@ -73,15 +75,31 @@
     <div class="categories">
         <div class="small-container">
             <div class="row">
-                <div class="col-3-2">
+                <div class="col-3-2 wrapper">
                     <img src="/Resources/—Pngtree—iphone xs max gold_3627549.png">
+                    <div class="overlay">
+                        <div class="content">
+                            <p>Phones</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3-2">
-                    <img src="/Resources/Samsung-Galaxy-S20+-Ultra-on-transparent-background-PNG.png">
+                <div class="col-3-2 wrapper">
+                    <img src="/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                    <div class="overlay">
+                        <div class="content">
+                            <p>Laptops</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3-2">
-                    <img src="/Resources/res_5842875b72508d48617f875405b6f880.PNG">
+                <div class="col-3-2 wrapper">
+                    <img src="/Resources/Smartwatchuri/Apple Watch 3.png">
+                    <div class="overlay">
+                        <div class="content">
+                            <p>Smartwatches</p>
+                        </div>
+                    </div>
                 </div>
+                <a href="" class="main-content-button">More &#8594;</a>
             </div>
         </div>
     </div>
@@ -91,7 +109,9 @@
         <h2 class="feature-products-title">Featured Products</h2>
         <div class="row">
             <div class="col-4">
-                <img src="/Resources/Casti/JBL Tune 700BT.png">
+                <a href="product-details.html">
+                    <img src="/Resources/Casti/JBL Tune 700BT.png">
+                </a>
                 <div class="feature-products-product-name">
                     <h4>JBL Tune 700BT</h4>
                 </div>
@@ -107,7 +127,9 @@
                 </div>
             </div>
             <div class="col-4">
-                <img src="/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                <a href="product-details.html">
+                    <img src="/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                </a>
                 <div class="feature-products-product-name">
                     <h4>Asus ZenBook 14 UM425IA</h4>
                 </div>
@@ -123,7 +145,9 @@
                 </div>
             </div>
             <div class="col-4">
-                <img src="/Resources/Telefoane/Huawei P40 Lite, Dual Sim.png">
+                <a href="product-details.html">
+                    <img src="/Resources/Telefoane/Huawei P40 Lite, Dual Sim.png">
+                </a>
                 <div class="feature-products-product-name">
                     <h4>Huaweei P40 Lite</h4>
                 </div>
@@ -139,7 +163,9 @@
                 </div>
             </div>
             <div class="col-4">
-                <img src="/Resources/Smartwatchuri/Fitbit Versa2.png">
+                <a href="product-details.html">
+                    <img src="/Resources/Smartwatchuri/Fitbit Versa2.png">
+                </a>
                 <div class="feature-products-product-name">
                     <h4>Fitbit Versa 2</h4>
                 </div>
@@ -224,9 +250,9 @@
     <script>
         var MenuItems = document.getElementById("MenuItems");
         MenuItems.style.maxHeight = "0px";
-        
-        function menuToggle(){
-            if(MenuItems.style.maxHeight == "0px"){
+
+        function menuToggle() {
+            if (MenuItems.style.maxHeight == "0px") {
                 MenuItems.style.maxHeight = "100%";
                 MenuItems.style.marginTop = "50px";
             } else {
