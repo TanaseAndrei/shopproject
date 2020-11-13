@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <body>
+        <div th:fragment="header" class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/Front/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                </a>
+            </div>
+            <!-- Nav links -->
+            <nav>
+                <ul id="MenuItems">
+                    <li>
+                        <a href="account.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Categories</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img class="nav-icon" src="/Front/Resources/shopping-cart-of-checkered-design.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="favorites.html">
+                            <img class="nav-icon" src="/Front/Resources/heart.png">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <img class="menu-icon" src="/Front/Resources/menu.png" onclick="menuToggle()">
+        </div>
+    </body>
+</html>

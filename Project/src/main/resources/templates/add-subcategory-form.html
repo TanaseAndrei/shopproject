@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:if="${parentCategories.size()==0}">
+        <span>No parent categories found</span>
+    </div>
+    <label for="subcategoryForm">Add a subcategory</label>
+    <form id="subcategoryForm" th:action="@{/category/add-subcategory}" method="post" th:object="${category}">
+        <input type="text" th:field="*{categoryName}"/>
+        <label for="selectParentCategory">Enter a parent category</label>
+        <select id="selectParentCategory" th:field="*{parentCategory}">
+            <option th:each="category : ${parentCategories}"
+                    th:value="${category.categoryName}"
+                    th:text="${category.categoryName}"/>
+        </select>
+        <button type="submit">Add category</button>
+    </form>
+</body>
+</html>
