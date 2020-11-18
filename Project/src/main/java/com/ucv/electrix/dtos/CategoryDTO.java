@@ -1,21 +1,29 @@
 package com.ucv.electrix.dtos;
 
+import com.ucv.electrix.validators.NotBlank;
+import com.ucv.electrix.validators.NotNull;
+import com.ucv.electrix.validators.MustExists;
+import com.ucv.electrix.validators.MustNotExists;
+import com.ucv.electrix.validators.validated.CreateCategory;
+import com.ucv.electrix.validators.validated.CreateSubcategory;
+import com.ucv.electrix.validators.validated.DeleteCategory;
+import com.ucv.electrix.validators.validated.UpdateCategory;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Setter
 @Getter
 public class CategoryDTO {
 
-    @NotNull
-    @NotBlank
-    @Min(value = 0, message = "The category's name should not be empty")
+    @NotBlank(groups = {CreateCategory.class, CreateSubcategory.class, DeleteCategory.class})
+    @NotNull(groups = {CreateCategory.class, CreateSubcategory.class, DeleteCategory.class})
+    @MustNotExists(groups = {CreateCategory.class, CreateSubcategory.class})
+    @MustExists(groups = {DeleteCategory.class, UpdateCategory.class})
     private String categoryName;
 
-    private CategoryDTO parentCategory;
+    @NotBlank(groups = {CreateSubcategory.class})
+    @NotNull(groups = {CreateSubcategory.class})
+    @MustExists(groups = {CreateSubcategory.class})
+    private String parentCategoryName;
 
 }

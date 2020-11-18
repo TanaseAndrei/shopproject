@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form th:action="@{/category/delete}" method="delete" th:object="${category}">
+        <input type="text" th:field="*{categoryName}"/>
+        <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}" th:errorclass="error"></span>
+        <button type="submit">Delete category</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div>
         <form th:action="@{/category/add-category}" method="post" th:object="${category}">
             <input type="text" th:field="*{categoryName}"/>
+            <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}" th:errorclass="error"></span>
             <button type="submit">Add category</button>
         </form>
     </div>

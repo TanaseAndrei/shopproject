@@ -6,4 +6,8 @@ public class EntityNotFoundServiceException extends ServiceException {
         super(message);
     }
 
+    public EntityNotFoundServiceException(String message, Throwable throwable) {
+        super(message, throwable);
+    }
+
 }

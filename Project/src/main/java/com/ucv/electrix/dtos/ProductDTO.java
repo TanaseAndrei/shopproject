@@ -27,8 +27,6 @@ public class ProductDTO {
     @Min(value = 1, message = "You must enter a stock")
     private Integer stock;
 
-    @NotNull
-
     @NotBlank
     @Min(value = 1, message = "You must enter a brand")
     private String brand;
@@ -40,6 +38,6 @@ public class ProductDTO {
 
     @NotNull
     @Min(value = 1, message = "You must enter a category")
-    private Category category;
+    private String category;
 
 }

@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div th:if="${parentCategories.size()==0}">
-        <span>No parent categories found</span>
+    <div th:if="${parentCategories.size() == 0}">
+        <span>There are no categories, please, add some categories!</span>
     </div>
-    <label for="subcategoryForm">Add a subcategory</label>
-    <form id="subcategoryForm" th:action="@{/category/add-subcategory}" method="post" th:object="${category}">
-        <input type="text" th:field="*{categoryName}"/>
-        <label for="selectParentCategory">Enter a parent category</label>
-        <select id="selectParentCategory" th:field="*{parentCategory}">
-            <option th:each="category : ${parentCategories}"
-                    th:value="${category.categoryName}"
-                    th:text="${category.categoryName}"/>
-        </select>
-        <button type="submit">Add category</button>
-    </form>
+    <div th:unless="${parentCategories.size() == 0}">
+        <label for="subcategoryForm">Add a subcategory</label>
+        <form id="subcategoryForm" th:action="@{/category/add-subcategory}" th:object="${category}" method="post">
+
+            <label for="name">Category name</label>
+            <input id="name" type="text" th:field="*{categoryName}"/>
+            <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}" th:errorclass="error"></span>
+
+            <label for="selectParentCategory">Enter a parent category</label>
+            <select id="selectParentCategory" th:field="*{parentCategoryName}">
+                <option th:each="category : ${parentCategories}"
+                        th:value="${category.categoryName}"
+                        th:text="${category.categoryName}"/>
+                <span th:if="${#fields.hasErrors('parentCategoryName')}" th:errors="*{parentCategoryName}" th:errorclass="error"></span>
+            </select>
+
+            <button type="submit">Add category</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -10,19 +10,20 @@ public class CategoryMapper {
 
     public static Category categoryDTOToCategoryMapper(CategoryDTO categoryDTO){
         Category category = new Category();
+        Category parentCategory = null;
         category.setCategoryName(categoryDTO.getCategoryName());
-        if(categoryDTO.getParentCategory() == null){
-            category.setParentCategory(null);
-        } else {
-            category.setParentCategory(categoryDTOToCategoryMapper(categoryDTO.getParentCategory()));
-        }
+        category.setParentCategory(parentCategory);
         return category;
     }
 
     public static CategoryDTO categoryToCategoryDTOMapper(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
         categoryDTO.setCategoryName(category.getCategoryName());
-        categoryDTO.setParentCategory(categoryToCategoryDTOMapper(category));
+        if(category.getParentCategory() == null){
+            categoryDTO.setParentCategoryName(null);
+        } else {
+            categoryDTO.setParentCategoryName(category.getParentCategory().getCategoryName());
+        }
         return categoryDTO;
     }
 
@@ -30,9 +31,7 @@ public class CategoryMapper {
         List<CategoryDTO> listOfCategoriesDTO = listOfCategories
                 .stream()
                 .map(category ->{
-                    CategoryDTO categoryDTO = new CategoryDTO();
-                    categoryDTO.setParentCategory(categoryToCategoryDTOMapper(category));
-                    categoryDTO.setCategoryName(category.getCategoryName());
+                    CategoryDTO categoryDTO = categoryToCategoryDTOMapper(category);
                     return categoryDTO;
                 })
                 .collect(Collectors.toList());

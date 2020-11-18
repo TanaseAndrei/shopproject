@@ -1,6 +1,7 @@
 package com.ucv.electrix.services.implementations;
 
 import com.ucv.electrix.dtos.CategoryDTO;
+import com.ucv.electrix.exceptions.EntityAlreadyExistsServiceException;
 import com.ucv.electrix.exceptions.EntityNotFoundServiceException;
 import com.ucv.electrix.mappers.CategoryMapper;
 import com.ucv.electrix.models.Category;
@@ -22,47 +23,45 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void add(CategoryDTO categoryDTO) {
         Category category = CategoryMapper.categoryDTOToCategoryMapper(categoryDTO);
-        categoryRepository.save(category);
-    }
-
-    @Override
-    public void addSubcategory(CategoryDTO categoryDTO) {
-        Category category = CategoryMapper.categoryDTOToCategoryMapper(categoryDTO);
+        Category parentCategory;
+        if (categoryDTO.getParentCategoryName() != null) {
+            parentCategory = categoryRepository.findByName(categoryDTO.getParentCategoryName()).get();
+            category.setParentCategory(parentCategory);
+        }
         categoryRepository.save(category);
     }
 
     @Override
     public List<CategoryDTO> getParentCategories() {
-        List<CategoryDTO> listOfDTOCategories = CategoryMapper.listOfCategoriesToListOfCategoriesDTOMapper(categoryRepository.findParentCategories());
-        return listOfDTOCategories;
+        List<Category> listOfCategories = categoryRepository.findParentCategories();
+        return CategoryMapper.listOfCategoriesToListOfCategoriesDTOMapper(listOfCategories);
     }
 
     @Override
-    public void delete(Integer id) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundServiceException("The service did not find the searched category to delete!"));
+    public void delete(CategoryDTO categoryDTO) {
+        Category category = categoryRepository.findByName(categoryDTO.getCategoryName()).get();
+        if(category.getParentCategory() == null){
+            List<Category> subcategoriesOfParentCategory = categoryRepository.findAllByParentCategory(categoryDTO.getCategoryName());
+            subcategoriesOfParentCategory
+                    .forEach(categoryRepository::delete);
+        }
         categoryRepository.delete(category);
     }
 
     @Override
-    public void update(Integer id, CategoryDTO categoryDTO) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundServiceException("The service did not find the searched category to update!"));
-        category.setParentCategory(CategoryMapper.categoryDTOToCategoryMapper(categoryDTO.getParentCategory()));
-        category.setCategoryName(categoryDTO.getCategoryName());
-        categoryRepository.save(category);
+    public void update(String name, CategoryDTO categoryDTO) {
+
     }
 
     @Override
-    public CategoryDTO get(Integer id) {
-        Category category = categoryRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundServiceException("The service did not find the searched category!"));
-        return CategoryMapper.categoryToCategoryDTOMapper(category);
+    public CategoryDTO get(String name) {
+        return null;
     }
 
     @Override
     public List<CategoryDTO> getAll() {
-        List<Category> listOfCategories = categoryRepository.findAll();
-        return CategoryMapper.listOfCategoriesToListOfCategoriesDTOMapper(listOfCategories);
+        return null;
     }
+
+
 }
