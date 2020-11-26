@@ -1,11 +1,6 @@
 package com.ucv.electrix.models;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "t_category")
@@ -22,11 +17,6 @@ public class Category {
     @ManyToOne
     @JoinColumn(name = "parentCategoryId")
     private Category parentCategory;
-
-    @OneToMany(mappedBy = "category",
-               orphanRemoval = true,
-               cascade = CascadeType.ALL)
-    private List<Product> listOfProducts = new ArrayList<>();
 
     public String getCategoryName() {
         return categoryName;

@@ -30,6 +30,9 @@ public class Product {
     @JoinColumn(name = "categoryId")
     private Category category;
 
+    @Column(name = "product_image_name")
+    private String productImageName;
+
     public String getName() {
         return name;
     }
@@ -84,5 +87,13 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getProductImageName() {
+        return productImageName;
+    }
+
+    public void setProductImageName(String productImageName) {
+        this.productImageName = productImageName;
     }
 }

@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
+    <div th:if="${error != null}">
+        <span th:text="'Exception ' + ${error.message}">${error.message}</span>
+    </div>
+    <div th:unless="${error != null}">
+        <form th:action="@{/product/add}" th:object="${product}" method="post" enctype="multipart/form-data">
 
+            <label for="name">Add product's name</label>
+            <input id="name" type="text" th:field="*{name}"/>
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="error"/><br>
+
+            <label for="price">Add product's price</label>
+            <input id="price" type="text" th:field="*{price}"/>
+            <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" th:errorclass="error"/><br>
+
+            <label for="stock">Add product's stock</label>
+            <input id="stock" type="text" th:field="*{stock}"/>
+            <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" th:errorclass="error"/><br>
+
+            <label for="brand">Add product's brand</label>
+            <input id="brand" type="text" th:field="*{brand}"/>
+            <span th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" th:errorclass="error"/><br>
+
+            <label for="details">Add product's details</label>
+            <input id="details" type="text" th:field="*{details}"/>
+            <span th:if="${#fields.hasErrors('details')}" th:errors="*{details}" th:errorclass="error"/><br>
+
+            <label for="category">Add product's category</label>
+            <select id="category" th:field="*{category}">
+                <option th:each="category : ${listOfSubcategories}"
+                        th:value="${category.categoryName}"
+                        th:text="${category.categoryName}"/>
+            </select>
+            <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}" th:errorclass="error"/><br>
+
+            <label for="productPicture">Product's picture:</label>
+            <input id="productPicture" type="file" th:field="*{multipartFile}">
+            <span th:if="${#fields.hasErrors('multipartFile')}" th:errors="*{multipartFile}" th:errorclass="error"/><br>
+
+            <button type="submit" value="upload">Add product</button><br>
+        </form>
+    </div>
 </body>
 </html>

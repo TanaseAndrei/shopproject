@@ -1,6 +1,6 @@
-package com.ucv.electrix.validators;
+package com.ucv.electrix.validators.annotations;
 
-import com.ucv.electrix.validators.implementations.MustNotExistsValidatorImpl;
+import com.ucv.electrix.validators.implementations.MustExistsValidatorImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -8,9 +8,9 @@ import java.lang.annotation.*;
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = MustNotExistsValidatorImpl.class)
+@Constraint(validatedBy = MustExistsValidatorImpl.class)
 @Documented
-public @interface MustNotExists {
+public @interface CategoryMustExists {
     String message() default "{categoryDTO.default}";
 
     Class<?>[] groups() default { };

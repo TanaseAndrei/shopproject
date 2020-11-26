@@ -1,17 +1,19 @@
 package com.ucv.electrix.services.implementations;
 
 import com.ucv.electrix.dtos.ProductDTO;
-import com.ucv.electrix.exceptions.EntityAlreadyExistsServiceException;
-import com.ucv.electrix.exceptions.EntityNotFoundServiceException;
+import com.ucv.electrix.exceptions.services.ImageCreationException;
 import com.ucv.electrix.mappers.ProductMapper;
 import com.ucv.electrix.models.Product;
 import com.ucv.electrix.repositories.CategoryRepository;
 import com.ucv.electrix.repositories.ProductRepository;
 import com.ucv.electrix.services.ProductService;
+import com.ucv.electrix.utils.interfaces.ImageCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -24,29 +26,27 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private ImageCreator imageCreator;
+
     @Override
-    public void add(ProductDTO productDTO) {
-        if(productRepository.findByName(productDTO.getName()) != null){
-            throw new EntityAlreadyExistsServiceException("The entity " + productDTO.getName() + " already exists in the database!");
-        } else {
-            if(categoryRepository.findByName(productDTO.getCategory()) == null){
-                throw new EntityNotFoundServiceException("The category " + productDTO.getName() + " does not exist!");
-            } else {
-                Product product = ProductMapper.productDTOToProductMapper(productDTO);
-                product.setCategory(categoryRepository.findByName(productDTO.getCategory()).get());
-                productRepository.save(product);
-            }
+    public void add(ProductDTO productDTO) throws ImageCreationException  {
+        try {
+            Product product = ProductMapper.productDTOToProductMapper(productDTO);
+            product.setCategory(categoryRepository.findByName(productDTO.getCategory()).get());
+            product.setProductImageName(imageCreator.createPicture(productDTO.getMultipartFile()));
+            productRepository.save(product);
+        } catch (IOException ioException) {
+            throw new ImageCreationException("The product's image could not be created!", ioException);
         }
     }
 
     @Override
-    public void delete(Long id) {
-
+    public void delete(String name) {
     }
 
     @Override
-    public void update(Long id, ProductDTO productDTO) {
-
+    public void update(ProductDTO productDTO) {
     }
 
     @Override
@@ -57,5 +57,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTO> getAll() {
         return null;
+    }
+
+    private void createPicture(MultipartFile multipartFile) throws IOException {
+
     }
 }

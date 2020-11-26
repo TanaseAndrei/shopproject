@@ -1,6 +1,6 @@
-package com.ucv.electrix.validators;
+package com.ucv.electrix.validators.annotations;
 
-import com.ucv.electrix.validators.implementations.NotBlankValidatorImpl;
+import com.ucv.electrix.validators.implementations.NotNullValidatorImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -8,9 +8,9 @@ import java.lang.annotation.*;
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = NotBlankValidatorImpl.class)
+@Constraint(validatedBy = NotNullValidatorImpl.class)
 @Documented
-public @interface NotBlank {
+public @interface NotNull {
     String message() default "{categoryDTO.default}";
 
     Class<?>[] groups() default { };

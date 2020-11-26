@@ -21,7 +21,7 @@
         <!-- Logo -->
         <div class="logo">
             <a href="index.html">
-                <img src="/Front/Logo/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png" alt="Logo">
+                <img th:src="@{/images/front-pictures/7a7a2840-c407-43a7-b86c-36785ac2955d_200x200.png}" alt="Logo">
             </a>
         </div>
         <!-- Nav links -->
@@ -35,17 +35,17 @@
                 </li>
                 <li>
                     <a href="cart.html">
-                        <img class="nav-icon" src="/Front/Resources/shopping-cart-of-checkered-design.png">
+                        <img class="nav-icon" th:src="@{/images/front-pictures/shopping-cart-of-checkered-design.png}">
                     </a>
                 </li>
                 <li>
                     <a href="favorites.html">
-                        <img class="nav-icon" src="/Front/Resources/heart.png">
+                        <img class="nav-icon" th:src="@{/images/front-pictures/heart.png}">
                     </a>
                 </li>
             </ul>
         </nav>
-        <img class="menu-icon" src="/Front/Resources/menu.png" onclick="menuToggle()">
+        <img class="menu-icon" th:src="@{/images/front-pictures/menu.png}" onclick="menuToggle()">
     </div>
 
     <!-- Main content -->
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="col-3">
-            <img src="/Front/Resources/—Pngtree—iphone xs max gold_3627549.png" id="iphone">
+            <img th:src="@{/images/front-pictures/Pngtree iphone xs max gold_3627549.png}" id="iphone">
         </div>
         <div class="col-3 aux-info">
             <h2>64GB for 599$</h2>
@@ -77,7 +77,7 @@
     <div class="small-container">
         <div class="row">
             <div class="col-3-2 wrapper">
-                <img src="/Front/Resources/—Pngtree—iphone xs max gold_3627549.png">
+                <img th:src="@{/images/front-pictures/Pngtree iphone xs max gold_3627549.png}">
                 <div class="overlay">
                     <div class="content">
                         <p>Phones</p>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="col-3-2 wrapper">
-                <img src="/Front/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                <img th:src="@{/images/front-pictures/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png}">
                 <div class="overlay">
                     <div class="content">
                         <p>Laptops</p>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="col-3-2 wrapper">
-                <img src="/Front/Resources/Smartwatchuri/Apple Watch 3.png">
+                <img th:src="@{/images/front-pictures/Apple Watch 3.png}">
                 <div class="overlay">
                     <div class="content">
                         <p>Smartwatches</p>
@@ -111,7 +111,7 @@
     <div class="row">
         <div class="col-4">
             <a href="product-details.html">
-                <img src="/Front/Resources/Casti/JBL Tune 700BT.png">
+                <img th:src="@{/images/front-pictures/JBL Tune 700BT.png}">
             </a>
             <div class="feature-products-product-name">
                 <h4>JBL Tune 700BT</h4>
@@ -129,7 +129,7 @@
         </div>
         <div class="col-4">
             <a href="product-details.html">
-                <img src="/Front/Resources/Laptopuri/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png">
+                <img th:src="@{/images/front-pictures/Laptop ultraportabil ASUS ZenBook 14 UM425IA.png}">
             </a>
             <div class="feature-products-product-name">
                 <h4>Asus ZenBook 14 UM425IA</h4>
@@ -147,7 +147,7 @@
         </div>
         <div class="col-4">
             <a href="product-details.html">
-                <img src="/Front/Resources/Telefoane/Huawei P40 Lite, Dual Sim.png">
+                <img th:src="@{/images/front-pictures/Huawei P40 Lite Dual Sim.png}">
             </a>
             <div class="feature-products-product-name">
                 <h4>Huaweei P40 Lite</h4>
@@ -165,7 +165,7 @@
         </div>
         <div class="col-4">
             <a href="product-details.html">
-                <img src="/Front/Resources/Smartwatchuri/Fitbit Versa2.png">
+                <img th:src="@{/images/front-pictures/Fitbit Versa2.png}">
             </a>
             <div class="feature-products-product-name">
                 <h4>Fitbit Versa 2</h4>
@@ -192,7 +192,7 @@
         <div class="row">
             <div class="col-2">
                 <img class="online-offer-image"
-                     src="/Front/Resources/Samsung-Galaxy-S20+-Ultra-on-transparent-background-PNG.png">
+                     th:src="@{/images/front-pictures/Samsung-Galaxy-S20+-Ultra-on-transparent-background-PNG.png}">
             </div>
             <div class="col-2">
                 <p>Exclusively online on Electrix</p>

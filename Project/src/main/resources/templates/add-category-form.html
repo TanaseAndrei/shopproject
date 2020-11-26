@@ -2,20 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .error{
-            color: red;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" th:href="@{/css/error.css}">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/262b4f6075.js"></script>
+    <title>E-commerce website</title>
 </head>
 <body>
     <div>
-        <form th:action="@{/category/add-category}" method="post" th:object="${category}">
-            <input type="text" th:field="*{categoryName}"/>
+        <form class="form-container" th:action="@{/category/add-category}" method="post" th:object="${category}">
+            <input placeholder= "Insert category name" type="text" th:field="*{categoryName}"/><br>
             <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}" th:errorclass="error"></span>
-            <button type="submit">Add category</button>
+            <button class="form-button" type="submit">Add category</button>
         </form>
+    </div>
+    <div>
+        Return to <a th:href="@{/}">homepage</a>
     </div>
 </body>
 </html>

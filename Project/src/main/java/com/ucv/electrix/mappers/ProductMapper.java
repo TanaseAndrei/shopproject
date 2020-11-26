@@ -10,8 +10,9 @@ public class ProductMapper {
         product.setBrand(productDTO.getBrand());
         product.setStock(productDTO.getStock());
         product.setDetails(productDTO.getDetails());
-        product.setName(product.getName());
-        product.setPrice(product.getPrice());
+        product.setName(productDTO.getName());
+        product.setPrice(productDTO.getPrice());
+//        product.setCategory(productDTO.getCategory());
         return product;
     }
 

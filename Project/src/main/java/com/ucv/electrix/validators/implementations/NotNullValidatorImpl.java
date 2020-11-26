@@ -1,6 +1,6 @@
 package com.ucv.electrix.validators.implementations;
 
-import com.ucv.electrix.validators.NotNull;
+import com.ucv.electrix.validators.annotations.NotNull;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <link rel="stylesheet" href="/Front/css/form.css">
+        <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+        <script src="https://use.fontawesome.com/262b4f6075.js"></script>
+    </head>
+    <body>
+        <div>
+            <form class="form-container" method="post" th:object="${category}">
+                <input placeholder="Insert category name" type="text"/>
+                <button class="form-button" type="submit">Add category</button>
+            </form>
+        </div>
+    </body>
+</html>

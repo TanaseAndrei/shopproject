@@ -10,14 +10,14 @@ public class CategoryMapper {
 
     public static Category categoryDTOToCategoryMapper(CategoryDTO categoryDTO){
         Category category = new Category();
-        Category parentCategory = null;
         category.setCategoryName(categoryDTO.getCategoryName());
-        category.setParentCategory(parentCategory);
+        category.setParentCategory(null);
         return category;
     }
 
     public static CategoryDTO categoryToCategoryDTOMapper(Category category){
         CategoryDTO categoryDTO = new CategoryDTO();
+        categoryDTO.setId(category.getId());
         categoryDTO.setCategoryName(category.getCategoryName());
         if(category.getParentCategory() == null){
             categoryDTO.setParentCategoryName(null);
@@ -28,13 +28,12 @@ public class CategoryMapper {
     }
 
     public static List<CategoryDTO> listOfCategoriesToListOfCategoriesDTOMapper(List<Category> listOfCategories){
-        List<CategoryDTO> listOfCategoriesDTO = listOfCategories
+        return listOfCategories
                 .stream()
                 .map(category ->{
                     CategoryDTO categoryDTO = categoryToCategoryDTOMapper(category);
                     return categoryDTO;
                 })
                 .collect(Collectors.toList());
-        return listOfCategoriesDTO;
     }
 }
