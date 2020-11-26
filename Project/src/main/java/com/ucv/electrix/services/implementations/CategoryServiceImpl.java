@@ -17,8 +17,12 @@ import java.util.NoSuchElementException;
 @Transactional
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    public CategoryServiceImpl(CategoryRepository categoryRepository){
+        this.categoryRepository = categoryRepository;
+    }
 
     @Override
     public void add(CategoryDTO categoryDTO) {

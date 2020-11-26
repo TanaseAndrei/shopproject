@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -20,14 +21,18 @@ import java.util.List;
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
     private CategoryRepository categoryRepository;
 
-    @Autowired
     private ImageCreator imageCreator;
+
+    @Autowired
+    public ProductServiceImpl(ProductRepository productRepository, CategoryRepository categoryRepository, ImageCreator imageCreator){
+        this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
+        this.imageCreator = imageCreator;
+    }
 
     @Override
     public void add(ProductDTO productDTO) throws ImageCreationException  {

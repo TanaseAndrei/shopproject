@@ -2,6 +2,7 @@ package com.ucv.electrix.controllers;
 
 import com.ucv.electrix.dtos.ProductDTO;
 import com.ucv.electrix.exceptions.services.ImageCreationException;
+import com.ucv.electrix.models.Category;
 import com.ucv.electrix.services.CategoryService;
 import com.ucv.electrix.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,15 @@ import javax.validation.Valid;
 @RequestMapping("/product")
 public class ProductController {
 
-    @Autowired
     private ProductService productService;
 
-    @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    public ProductController(ProductService productService, CategoryService categoryService){
+        this.productService = productService;
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/add")
     public String getAddProductForm(Model model) {
